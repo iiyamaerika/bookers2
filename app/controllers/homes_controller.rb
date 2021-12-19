@@ -1,4 +1,9 @@
 class HomesController < ApplicationController
-  def top
+  def edit
+    @books = Post.find(params[:id])
   end
+  
+  def destroy
+  end
+  
 end
