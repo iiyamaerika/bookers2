@@ -5,39 +5,68 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to 'Bookers', root_path,style: "color:white;" %>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto list-style: none;">
     <% if user_signed_in? %>
-      <li>
-        <%= link_to 'HOME', user_path(@user) %>
+      <li class="nav-item">
+        <%= link_to icon("fas","home", "Home") , users_path(@user),class: "nav-link header-link" %>
       </li>
-       <li>
-        <%= link_to 'Users', users_path %>
+       <li class="nav-item">
+        <%= link_to icon("fas","users", "Users") , users_path,class: "nav-link header-link" %>
       </li>
-       <li>
-        <%= link_to 'Books',books_path %>
+       <li class="nav-item">
+        <%= link_to icon("fas","book-open", "books") ,books_path,class: "nav-link header-link" %>
       </li>
-      <li>
-        <%= link_to "Log out", destroy_user_session_path %>
+      <li class="nav-item">
+        <%= link_to icon("fas","sign-out-alt", "Log out") , destroy_user_session_path, method: :delete, class: "nav-link header-link" %>
       </li>
     <% else %>
-      <li>
-        <%= link_to 'HOME', root_path %>
+      <li class="nav-item">
+        <%= link_to icon("fas","home","Home"), root_path,class: "nav-link header-link" %>
       </li>
-       <li>
-        <%= link_to 'About', "/homes/about" %>
+       <li class="nav-item">
+        <%= link_to icon("fas","link","About"), "/homes/about",class: "nav-link header-link" %>
       </li>
-      <li>
-        <%= link_to "Sign up", new_user_registration_path %>
+      <li class="nav-item">
+        <%= link_to icon("fas","user-plus","sign up"), new_user_registration_path,class: "nav-link header-link" %>
       </li>
-      <li>
-        <%= link_to "Log in", new_user_session_path %>
+      <li class="nav-item">
+        <%= link_to icon("fas","sign-in-alt","Log in"), new_user_session_path,class: "nav-link header-link" %>
       </li>
     <% end %>
-
+    </ul>
+    </div>
+    </nav>
+  </header>
+  
+  <div class="container px-5 px-sm-0">
     <%= yield %>
+  </div>
+  
+  <footer>
+    <div class ="container mt-5">
+      <div class = "row">
+        <div class = "mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   </body>
 </html>

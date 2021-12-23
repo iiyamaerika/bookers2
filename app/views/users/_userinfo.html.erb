@@ -1,0 +1,23 @@
+<div class="col-md-3">
+<h2>User info</h2>
+
+  <%= attachment_image_tag(user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100') %>
+
+
+<table class="table">
+<%= form_with model: user, local:true do |f| %>
+    <tbody>
+      <tr>
+          <th>name</th>
+          <th><%= f.text_field :name %></th>
+      </tr>
+      <tr>
+          <th>introduction</th>
+          <th><%= f.text_area :body %></th>
+      </tr>
+    </tbody>
+</table>
+<% end %>
+#Bootstrapで編集ボタンを作る。fontawesome使う。
+
+</div>

@@ -1,9 +1,11 @@
 class HomesController < ApplicationController
-  def edit
-    @books = Post.find(params[:id])
+  def show
   end
   
-  def destroy
+  def top
   end
+  
+
+  
   
 end
