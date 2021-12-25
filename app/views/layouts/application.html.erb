@@ -24,7 +24,7 @@
     <ul class="navbar-nav ml-auto list-style: none;">
     <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to icon("fas","home", "Home") , users_path(@user),class: "nav-link header-link" %>
+        <%= link_to icon("fas","home", "Home") , user_path(current_user),class: "nav-link header-link" %>
       </li>
        <li class="nav-item">
         <%= link_to icon("fas","users", "Users") , users_path,class: "nav-link header-link" %>

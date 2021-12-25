@@ -1,19 +1,24 @@
 class BooksController < ApplicationController
   def index
+    @book = Book.new
   end
-  
+
   def show
+    @book = Book.new
   end
-  
+
   def new
-    @comment = comment.new
   end
-  
+
   def create
-    comment = comment.new(comment-params)
-    comment.save
-    redirect_to'/books/:id'
+    @book = Book.new(book_params)
+    @book.save
+    redirect_to books_path([:id])
   end
-  
-  
+
+  private
+  def book_params
+    params.require(:book).permit(:title, :body)
+  end
+
 end

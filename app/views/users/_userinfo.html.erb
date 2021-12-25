@@ -1,11 +1,9 @@
-<div class="col-md-3">
 <h2>User info</h2>
 
   <%= attachment_image_tag(user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100') %>
 
 
 <table class="table">
-<%= form_with model: user, local:true do |f| %>
     <tbody>
       <tr>
           <th>name</th>
@@ -16,7 +14,6 @@
           <th><%= user.profile %></th>
       </tr>
     </tbody>
-<% end %>
 </table>
 
 <div class="d-grid gap-2">
@@ -24,4 +21,4 @@
 </div>
 
 
-</div>
+
