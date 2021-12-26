@@ -1,6 +1,11 @@
 <div class="container px-5 px-sm-0">
     <div class="row">
-
+  <% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this obj from being saved:
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
       <div class="col-md-8 offset-md-1">
         <main>
         <p id="notice"></p>
