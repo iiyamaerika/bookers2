@@ -4,7 +4,6 @@
         <%= render 'users/userinfo', user:@user %>
         <%= render 'users/newbook', book:@book %>
       </div>
-      
       <div class="col-md-8 offset-md-1">
         <h2>Users</h2>
         <table class="table">
@@ -21,7 +20,7 @@
                 <span>
                 <td><%= attachment_image_tag user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %></td>
                 <td><%= user.name %></td>
-                <td><%= link_to "show", "user_path(@user)" %></td>
+                <td><%= link_to "show", user_path(user) %></td>
                 </span>
               </tr>
               <% end %>

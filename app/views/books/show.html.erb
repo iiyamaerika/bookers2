@@ -17,12 +17,12 @@
                    <td><%= @book.body %></td>
                    <td>
                        <div class="d-grid gap-2">
-                         <button class="btn btn-sm btn-success" type="submit"><%= link_to "Edit",edit_book_path(@book) %></button>
+                         <%= link_to "Edit",edit_book_path(@book), class: "btn btn-sm btn-success" %>
                        </div>
                    </td>
                    <td>
                        <div class="d-grid gap-2">
-                         <button class="btn btn-sm btn-danger" type="submit"><%= link_to "Destroy",books_path, method: :delete %></button>
+                         <%= link_to "Destroy",book_path(@book), method: :delete, class: "btn btn-sm btn-danger", "data-confirm" => "本当に削除しますか？" %>
                        </div>
                    </td>
                  </tr>
