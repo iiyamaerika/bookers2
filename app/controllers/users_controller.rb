@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
-
+    @book_new = Book.new
+    @books = @user.books
 
   end
 
@@ -24,7 +25,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    @book = Book.newd(params[:id])
     Book.create(user_params)
+    redirect_to users_path
   end
 
 

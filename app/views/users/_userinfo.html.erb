@@ -1,6 +1,6 @@
 <h2>User info</h2>
 
-  <%= attachment_image_tag user, :image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %>
+  <%= attachment_image_tag user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %>
 
 
 <table class="table">
@@ -17,7 +17,7 @@
 </table>
 
 <div class="d-grid gap-2">
-   <button class="btn btn-outline-secondary btn-block" type="button"><%= link_to icon("fas","user-cog") , edit_user_path(@user) %></button>
+   <button class="btn btn-outline-secondary btn-block" type="button"><%= link_to icon("fas","user-cog") , edit_user_path(user) %></button>
 </div>
 
 

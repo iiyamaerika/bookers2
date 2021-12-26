@@ -3,22 +3,21 @@
 <div class="container px-5 px-sm-0">
     <div class="row">
       <div class="col-md-3">
-        <%= render 'users/userinfo', user:@user %>
-        <%= render 'users/newbook', book:@book %>
-      </div>    
-    
+        <%= render 'users/userinfo', user:current_user %>
+        <%= render 'users/newbook', book:@book_new %>
+      </div>
+
       <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
-        <%= form_with model: @user, local:true do |f| %>
         <table class="table">
              <tbody>
                  <tr>
-                   <td><%= attachment_image_tag @user, :image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %><br><%= f.text_field :name %></td>
-                   <td><%= f.text_field :title %></td>
-                   <td><%= f.text_field :body %></td>
+                   <td><%= attachment_image_tag @book.user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %></td>
+                   <td><%= @book.title %></td>
+                   <td><%= @book.body %></td>
                    <td>
                        <div class="d-grid gap-2">
-                         <button class="btn btn-sm btn-success" type="submit"><%= link_to "Edit",edit_user_path(@user) %></button>
+                         <button class="btn btn-sm btn-success" type="submit"><%= link_to "Edit",edit_book_path(@book) %></button>
                        </div>
                    </td>
                    <td>
@@ -29,9 +28,8 @@
                  </tr>
              </tbody>
         </table>
-        <% end %>
       </div>
    </div>
 </div>
-   
+
 </main>
