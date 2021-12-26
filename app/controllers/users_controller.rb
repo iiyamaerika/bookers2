@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+
+
+
+
   def create
     @book = Book.newd(params[:id])
     Book.create(user_params)
