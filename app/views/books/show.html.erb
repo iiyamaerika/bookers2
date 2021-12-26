@@ -1,3 +1,37 @@
-<h1>NEWBOOKで作成後の遷移先</h1>
-<h2>editボタンの遷移先はeditページ</h2>
-<h2>destroy後はbooksのindexページ</h2>
+
+<main>
+<div class="container px-5 px-sm-0">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'users/userinfo', user:@user %>
+        <%= render 'users/newbook', book:@book %>
+      </div>    
+    
+      <div class="col-md-8 offset-md-1">
+        <h2>Book detail</h2>
+        <%= form_with model: @user, local:true do |f| %>
+        <table class="table">
+             <tbody>
+                 <tr>
+                   <td><%= attachment_image_tag @user, :image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %><br><%= f.text_field :name %></td>
+                   <td><%= f.text_field :title %></td>
+                   <td><%= f.text_field :body %></td>
+                   <td>
+                       <div class="d-grid gap-2">
+                         <button class="btn btn-sm btn-success" type="submit"><%= link_to "Edit",edit_user_path(@user) %></button>
+                       </div>
+                   </td>
+                   <td>
+                       <div class="d-grid gap-2">
+                         <button class="btn btn-sm btn-danger" type="submit"><%= link_to "Destroy",books_path, method: :delete %></button>
+                       </div>
+                   </td>
+                 </tr>
+             </tbody>
+        </table>
+        <% end %>
+      </div>
+   </div>
+</div>
+   
+</main>
