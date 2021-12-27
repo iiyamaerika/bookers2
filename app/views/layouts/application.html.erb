@@ -30,7 +30,7 @@
         <%= link_to icon("fas","users", "Users") , users_path,class: "nav-link header-link" %>
       </li>
        <li class="nav-item">
-        <%= link_to icon("fas","book-open", "books") ,books_path,class: "nav-link header-link" %>
+        <%= link_to icon("fas","book-open", "Books") ,books_path,class: "nav-link header-link" %>
       </li>
       <li class="nav-item">
         <%= link_to icon("fas","sign-out-alt", "Log out") , destroy_user_session_path, method: :delete, class: "nav-link header-link" %>
@@ -40,10 +40,10 @@
         <%= link_to icon("fas","home","Home"), root_path,class: "nav-link header-link" %>
       </li>
        <li class="nav-item">
-        <%= link_to icon("fas","link","About"), "/homes/about",class: "nav-link header-link" %>
+        <%= link_to icon("fas","link","About"), "/home/about",class: "nav-link header-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to icon("fas","user-plus","sign up"), new_user_registration_path,class: "nav-link header-link" %>
+        <%= link_to icon("fas","user-plus","Sign up"), new_user_registration_path,class: "nav-link header-link" %>
       </li>
       <li class="nav-item">
         <%= link_to icon("fas","sign-in-alt","Log in"), new_user_session_path,class: "nav-link header-link" %>
