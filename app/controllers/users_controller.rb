@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to edit_user_path(@user)
+    else
+      render :index
+    end
   end
 
   def index
