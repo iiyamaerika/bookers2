@@ -29,11 +29,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    if @pbook.save
-      redirect_to book_path(@book)
-    else
-      render :show
-    end
+
   end
 
   def update
