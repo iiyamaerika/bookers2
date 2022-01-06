@@ -20,10 +20,10 @@
                 <span>
                 <td><%= attachment_image_tag user, :profile_image, :fill, 10, 10, format:'jpg', fallback: "no_image.jpg",size:'100x100' %></td>
                 <td><%= user.name %></td>
-                <td><%= link_to "show", user_path(user) %></td>
+                <td><%= link_to "Show", user_path(user) %></td>
                 </span>
               </tr>
-              <% end %>
+            <% end %>
           </tbody>
         </table>
       </div>

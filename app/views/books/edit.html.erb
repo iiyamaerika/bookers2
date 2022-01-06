@@ -21,14 +21,15 @@
         </div>
         <div class="form-group">
           <div class="d-grid gap-2">
-            <%= link_to "Update Book",users_path(@user), class: "btn btn-success" %>
+            <%= f.submit %>
           </div>
+          <% end %>
         </div>
-        <%= link_to "show",book_path(@book) %>
+        <%= link_to "Show",book_path(@book) %>
            |
-        <%= link_to "back",books_path %>
+        <%= link_to "Back",books_path %>
       </div>
     </div>
   </div>
-  <% end %>
+
 </main>
